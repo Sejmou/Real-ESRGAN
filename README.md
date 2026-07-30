@@ -3,7 +3,13 @@ I tried to use this fork of the original repo for [xinntao/Real-ESRGAN](https://
 
 To make things at least a little bit more predictable, I decided to use `uv` with a proper `pyproject.toml` instead of the rather messy "here's some pip install commands that should work" and `requirements.txt` without any pinned versions from the original repo.
 
-As expected, things did NOT work immediately, and I had to downgrade back to Python 3.16.
+As expected, things did NOT work immediately, and I had to downgrade back to Python 3.10.
+
+Anyway, if you _were_ to try to run this and you run Linux + own an NVIDIA GPU (and the package dependencies in `uv.lock` haven't been pulled from PyPi yet lol), it _should_ hopefully work now.
+
+Just make sure you have `uv` and installed your NVIDIA card's drivers such that `nvidia-smi` is available. Your LLM of choice will help you make that work.
+
+> NOTE: I ran this successfully on Ubuntu 26.04 inside an LXC container with GPU passthrough
 
 Unfortunately, the results turned out totally unsatisfactory: faces that looked almost convincing in the original image suddenly looked a LOT more like your usual AI slop again.
 
