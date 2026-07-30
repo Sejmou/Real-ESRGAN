@@ -138,3 +138,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# IIUC, this is created when running `uv run inference_realesrgan.py -n RealESRGAN_x4plus ...` - stores weights for gfpgan
+gfpgan/
