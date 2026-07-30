@@ -1,3 +1,23 @@
+# Reviving Real-ESRGAN in 2026 (won't recommend)
+I tried to use this fork of the original repo for [xinntao/Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) to upscale some images generated with local AI for an AI image detection uni project using the [recommended approach for 'general images'](#inference-general-images).
+
+To make things at least a little bit more predictable, I decided to use `uv` with a proper `pyproject.toml` instead of the rather messy "here's some pip install commands that should work" and `requirements.txt` without any pinned versions from the original repo.
+
+As expected, things did NOT work immediately, and I had to downgrade back to Python 3.16.
+
+Unfortunately, the results turned out totally unsatisfactory: faces that looked almost convincing in the original image suddenly looked a LOT more like your usual AI slop again.
+
+The 'uv translation' of the original command I used was:
+```bash
+uv run inference_realesrgan.py -n RealESRGAN_x4plus -i /path/to/my/source/data --face_enhance -o /path/to/my/target/dir
+```
+
+Not sure if the `wget https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth -P weights` that's also mentioned actually did anything, some more files were downloaded anyway after i ran the inference command above 🤷‍♂️
+
+⬇️⬇️⬇️ All content below remains unmodified compared to the source repo ⬇️⬇️⬇️
+
+---
+
 <p align="center">
   <img src="assets/realesrgan_logo.png" height=120>
 </p>
